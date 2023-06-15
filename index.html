@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Drawing Screen</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      cursor: none;
+    }
+  </style>
+  <link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body style="margin: 0;" id="body">
+  <div id="cursor"></div>
+  <div id="menu">
+    <button id="clearButton" onclick="clearFunction()">Clear</button>
+    <input type="range" min="1" max="99" class="slider" id="brushSize" value="4">
+    <span id="pixels" onclick="pixelChange()"></span>
+    <label class="switch">
+      <input type="checkbox" id="eraserCheck" onclick="toggleEraser()">
+      <span class="slider2 round"></span>
+    </label>
+    <button onclick="toggleCheckbox()">Eraser</button>
+    <input type="color" id="primary_color" class="field-radio">
+    <button id="saveButton">Save</button>
+  </div>
+  <script src="js/slider.js"></script>
+  <div id="container">
+    <div id="content">
+      <canvas id="drawingCanvas"><script src="js/script.js"></script></canvas>
+    </div>
+  </div>
+  <div id="custom-menu">
+    <ul>
+      <li onclick="clearFunction()">
+        Clear
+      </li>
+      <li>Item 2</li>
+    </ul>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+</html>
