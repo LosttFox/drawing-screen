@@ -178,4 +178,4 @@ window.addEventListener('load', loadDrawingData);
 
 // Get the save button element and attach the saveCanvasAsImage function to its click event
 const saveButton = document.getElementById('saveButton');
-saveButton.addEventListener('click', saveCanvasAsImage);
+saveButton.addEventListener('click', window.alert("This button isn't fully working yet :<"));
