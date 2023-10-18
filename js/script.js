@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+
 // Get the canvas element
 const canvas = document.getElementById('drawingCanvas');
 const ctx = canvas.getContext('2d');
@@ -179,5 +181,5 @@ window.addEventListener('load', loadDrawingData);
 // Get the save button element and attach the saveCanvasAsImage function to its click event
 func saveDrawing()
 {
-  alert("This button isn't fully working yet :<");
+  swal("Can't save", "This button isn't fully working yet :<", "error" {button: "Aww, I'm sorry",});
 }
