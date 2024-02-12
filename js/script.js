@@ -10,8 +10,8 @@ var colour = document.getElementById('primary_color');
 var eraser = document.getElementById('eraserCheck');
 
 // Configure canvas properties
-canvas.width = 2000
-canvas.height = 2000
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
 
 // Variables to track drawing state
 let isDrawing = false;
