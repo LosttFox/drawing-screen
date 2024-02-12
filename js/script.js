@@ -10,8 +10,8 @@ var colour = document.getElementById('primary_color');
 var eraser = document.getElementById('eraserCheck');
 
 // Configure canvas properties
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 // Variables to track drawing state
 let isDrawing = false;
@@ -165,6 +165,8 @@ function saveDrawingData() {
 
 // Function to load drawing data from local storage
 function loadDrawingData() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
   const data = localStorage.getItem('drawingData');
   if (data) {
     drawingData.length = 0;
