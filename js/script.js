@@ -181,7 +181,7 @@ function loadDrawingData() {
 window.addEventListener('load', loadDrawingData);
 
 // Get the save button element and attach the saveCanvasAsImage function to its click event
-func saveDrawing()
+function saveDrawing()
 {
-  swal("Can't save", "This button isn't fully working yet :<", "error" {button: "Aww, I'm sorry",});
+  swal("Can't save", "This button isn't fully working yet :<", "error", {button: "Aww, I'm sorry",});
 }
