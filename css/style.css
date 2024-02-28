@@ -10,11 +10,6 @@ html {
   font-family: cursive;
 }
 
-#content {
-  width: 2000px;
-  height: 2000px;
-}
-
 /* Right click context menu styling */
 #custom-menu {
   border-radius: 10px;
