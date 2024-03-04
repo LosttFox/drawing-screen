@@ -1,3 +1,5 @@
+var color = document.getElementById("colorPicker");
+
 // Code below is from https://stackoverflow.com/a/30684711
 
 // create canvas element and append it to document body
@@ -40,11 +42,22 @@ function draw(e) {
 
   ctx.lineWidth = 5;
   ctx.lineCap = 'round';
-  ctx.strokeStyle = '#c0392b';
+//   ctx.strokeStyle = '#c0392b';
 
   ctx.moveTo(pos.x, pos.y); // from
   setPosition(e);
   ctx.lineTo(pos.x, pos.y); // to
 
   ctx.stroke(); // draw it!
+}
+
+
+// My code
+ctx.strokeStyle = color.value;
+
+color.addEventListener('change', changeBrushColor);
+
+function changeBrushColor()
+{
+    ctx.strokeStyle = color.value;
 }
