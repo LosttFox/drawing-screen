@@ -5,9 +5,27 @@
   <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body style="margin: 0;" id="body">
-  <div>
-    <input id="colorPicker" type="color" value="#000000">
-  </div>
+  <nav>
+    <div id="menuToggle">
+      <input type="checkbox"/>
+  
+      <span></span>
+      <span></span>
+      <span></span>
+  
+      <ul id="menu">
+        <li>
+          <input type="range" min="1" max="99" class="slider"/>
+        </li>
+        <li>
+          <input id="primary_color" type="color" value="#000000"/>
+        </li>
+        <li>
+  
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div id="screen">
     <script src="js/drawingHandler.js"></script>
   </div>
