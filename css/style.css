@@ -1,9 +1,11 @@
-@font-face {
+@font-face 
+{
   font-family: OddlyCalmingRegular;
   src: url(../fonts/OddlyCalmingRegular-7B89V.ttf);
 }
 
-html {
+html 
+{
   overflow: hidden;
   height: 100%;
   width: 100%;
@@ -11,7 +13,8 @@ html {
 }
 
 /* Button Menu styling */
-#menu button {
+#menu button 
+{
   font-family: inherit;
   display: inline-block;
   text-decoration: none;
@@ -26,11 +29,13 @@ html {
   margin: 0 0.4em;
 }
 
-#menu button:hover {
+#menu button:hover 
+{
   background-color: #383838;
 }
 
-.slider {
+.slider 
+{
   -webkit-appearance: none;
   appearance: none;
   height: 1.5em;
@@ -42,7 +47,8 @@ html {
   transition: opacity .2s;
 }
 
-.slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb 
+{
   -webkit-appearance: none;
   appearance: none;
   width: 2.5em;
@@ -52,7 +58,8 @@ html {
   cursor: pointer;
 }
 
-.slider::-moz-range-thumb {
+.slider::-moz-range-thumb 
+{
   width: 2.5em;
   height: 2.5em;
   border-radius: 50%;
@@ -60,7 +67,8 @@ html {
   cursor: pointer;
 }
 
-#menu span {
+#menu span 
+{
   width: 70px;
   color: white;
   font-size: inherit;
@@ -69,7 +77,8 @@ html {
 }
 
 /* Style Colour Input */
-#primary_color{
+#colorPicker 
+{
   border-radius: 50%;
   height: 50px;
   width: 50px;
@@ -80,10 +89,12 @@ html {
   margin: 0px 1em;
 }
 
-#primary_color::-webkit-color-swatch-wrapper {
+#colorPicker::-webkit-color-swatch-wrapper 
+{
     padding: 0; 
 }
-#primary_color::-webkit-color-swatch {
+#colorPicker::-webkit-color-swatch 
+{
     border: none;
     border-radius: 50%;
 }
@@ -91,7 +102,8 @@ html {
 
 /* Toggle switch style - from w3schools */
 /* The switch - the box around the slider */
-.switch {
+.switch 
+{
   position: relative;
   display: inline-block;
   width: 100px;
@@ -99,14 +111,16 @@ html {
 }
 
 /* Hide default HTML checkbox */
-.switch input {
+.switch input 
+{
   opacity: 0;
   width: 0;
   height: 0;
 }
 
 /* The slider */
-.slider2 {
+.slider2 
+{
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -118,7 +132,8 @@ html {
   transition: .4s;
 }
 
-.slider2:before {
+.slider2:before 
+{
   position: absolute;
   content: "";
   height: 26px;
@@ -130,32 +145,36 @@ html {
   transition: .4s;
 }
 
-input:checked + .slider2 {
+input:checked + .slider2 
+{
   background-color: #ff70fa;
 }
 
-input:focus + .slider2 {
+input:focus + .slider2 
+{
   box-shadow: 0 0 1px #ff70fa;
 }
 
-input:checked + .slider2:before {
+input:checked + .slider2:before 
+{
   -webkit-transform: translateX(46px);
   -ms-transform: translateX(46px);
   transform: translateX(46px);
 }
 
 /* Rounded sliders */
-.slider2.round {
+.slider2.round 
+{
   border-radius: 34px;
 }
 
-.slider2.round:before {
+.slider2.round:before 
+{
   border-radius: 50%;
 }
 
-
-
-#cursor {
+#cursor 
+{
   position: fixed;
   top: 0;
   left: 0;
@@ -169,7 +188,8 @@ input:checked + .slider2:before {
   transition: width 0.2s, height 0.2s;
 }
 
-.resizing {
+.resizing 
+{
   transition: none;
 }
 
