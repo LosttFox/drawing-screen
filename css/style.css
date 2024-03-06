@@ -7,7 +7,7 @@ html {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  font-family: cursive;
+  font-family: OddlyCalmingRegular;
 }
 
 /* Button Menu styling */
@@ -174,7 +174,7 @@ input:checked + .slider2:before {
 }
 
 
-/* Credit to https://codepen.io/erikterwan/pen/EVzeRP for most of the styling*/
+/* Credit to https://codepen.io/erikterwan/pen/EVzeRP for the styling */
 #menuToggle
 {
   display: block;
@@ -188,21 +188,21 @@ input:checked + .slider2:before {
   user-select: none;
 }
 
-#menuToggle a
+#menuToggle p
 {
   text-decoration: none;
-  color: #232323;
+  color: #ffb0da;
   
   transition: color 0.3s ease;
 }
 
-#menuToggle a:hover
+#menuToggle p:hover
 {
-  color: tomato;
+  color: rgb(71, 178, 255);
 }
 
 
-#menuToggle input
+#menuToggle #toggleSwitch
 {
   display: block;
   width: 40px;
@@ -230,7 +230,7 @@ input:checked + .slider2:before {
   margin-bottom: 5px;
   position: relative;
   
-  background: #cdcdcd;
+  background: #232323;
   border-radius: 3px;
   
   z-index: 1;
@@ -256,17 +256,17 @@ input:checked + .slider2:before {
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-#menuToggle input:checked ~ span
+#menuToggle #toggleSwitch:checked ~ span
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
+  background: #cdcdcd;
 }
 
 /*
  * But let's hide the middle one.
  */
-#menuToggle input:checked ~ span:nth-last-child(3)
+#menuToggle #toggleSwitch:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
@@ -275,7 +275,7 @@ input:checked + .slider2:before {
 /*
  * Ohyeah and the last one should go the other direction
  */
-#menuToggle input:checked ~ span:nth-last-child(2)
+#menuToggle #toggleSwitch:checked ~ span:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
 }
@@ -293,7 +293,7 @@ input:checked + .slider2:before {
   padding-top: 125px;
   
   background: #1c1c1c;
-  border-radius: 10px;
+  border-radius: 15px 0px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border: 1px solid #050505;
   list-style-type: none;
@@ -309,13 +309,13 @@ input:checked + .slider2:before {
 #menu li
 {
   padding: 10px 0;
-  font-size: 22px;
+  font-size: 32px;
 }
 
 /*
  * And let's slide it in from the left
  */
-#menuToggle input:checked ~ ul
+#menuToggle #toggleSwitch:checked ~ ul
 {
   transform: none;
 }
