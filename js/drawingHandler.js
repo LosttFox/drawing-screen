@@ -1,4 +1,7 @@
 var color = document.getElementById("colorPicker");
+var size = $("#brushSize");
+const minus = document.getElementById("minus");
+const plus = document.getElementById("plus");
 
 // Code below is from https://stackoverflow.com/a/30684711
 
