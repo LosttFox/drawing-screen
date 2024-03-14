@@ -339,3 +339,13 @@ input:checked + .slider2:before
 {
   transform: none;
 }
+
+#menu a
+{
+  color: #ffb0da;
+  font-size: 24px;
+}
+#menu a:hover
+{
+  color:rgb(71, 178, 255);
+}

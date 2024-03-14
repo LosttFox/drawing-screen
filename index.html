@@ -5,7 +5,7 @@
   <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body style="margin: 0;" id="body">
-  <nav>
+  <div>
     <div id="menuToggle">
       <input type="checkbox" id="toggleSwitch"/>
   
@@ -16,17 +16,17 @@
       <ul id="menu">
         <li>
           <p>Brush Size</p>
-          <a>-</a><input type="range" min="1" max="99" class="slider"/><a>+</a>
+          <a id="minus">- </a><input type="range" min="1" max="99" class="slider"/><a id="plus"> +</a>
         </li>
         <li>
           <p>Color Picker</p><input id="colorPicker" type="color" value="#000000"/>
         </li>
         <li>
-  
+          <p>Eraser</p>
         </li>
       </ul>
     </div>
-  </nav>
+  </div>
   <div id="screen">
     <script src="js/drawingHandler.js"></script>
   </div>
