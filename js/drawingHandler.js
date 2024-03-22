@@ -1,5 +1,5 @@
 var color = document.getElementById("colorPicker");
-var size = $("#brushSize");
+var size = document.getElementById("brushSize");
 const minus = document.getElementById("minus");
 const plus = document.getElementById("plus");
 
@@ -43,7 +43,6 @@ function draw(e) {
 
   ctx.beginPath(); // begin
 
-  ctx.lineWidth = 5;
   ctx.lineCap = 'round';
 //   ctx.strokeStyle = '#c0392b';
 
@@ -57,10 +56,17 @@ function draw(e) {
 
 // My code
 ctx.strokeStyle = color.value;
+ctx.lineWidth = size.value;
 
 color.addEventListener('change', changeBrushColor);
+size.addEventListener('change', changeBrushSize);
 
 function changeBrushColor()
 {
     ctx.strokeStyle = color.value;
+}
+
+function changeBrushSize()
+{
+  ctx.lineWidth = size.value;
 }
