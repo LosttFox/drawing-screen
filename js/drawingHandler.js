@@ -1,5 +1,6 @@
 var color = document.getElementById("colorPicker");
 var size = document.getElementById("brushSize");
+var toggle = document.getElementById("toggleSwitch");
 const minus = document.getElementById("minus");
 const plus = document.getElementById("plus");
 
@@ -39,7 +40,7 @@ function resize() {
 
 function draw(e) {
   // mouse left button must be pressed
-  if (e.buttons !== 1) return;
+  if (e.buttons !== 1 || toggle.checked) return;
 
   ctx.beginPath(); // begin
 
