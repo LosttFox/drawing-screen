@@ -1,8 +1,12 @@
 var color = document.getElementById("colorPicker");
 var size = document.getElementById("brushSize");
 var toggle = document.getElementById("toggleSwitch");
+
 const minus = document.getElementById("minus");
 const plus = document.getElementById("plus");
+
+var lastColor = localStorage.getItem("lastColor");
+var lastSize = localStorage.getItem("lastSize");
 
 // Code below is from https://stackoverflow.com/a/30684711
 
@@ -45,7 +49,6 @@ function draw(e) {
   ctx.beginPath(); // begin
 
   ctx.lineCap = 'round';
-//   ctx.strokeStyle = '#c0392b';
 
   ctx.moveTo(pos.x, pos.y); // from
   setPosition(e);
@@ -56,8 +59,10 @@ function draw(e) {
 
 
 // My code
-ctx.strokeStyle = color.value;
-ctx.lineWidth = size.value;
+color.value = lastColor;
+ctx.strokeStyle = lastColor;
+size.value = lastSize;
+ctx.lineWidth = lastSize;
 
 color.addEventListener('change', changeBrushColor);
 size.addEventListener('change', changeBrushSize);
@@ -65,9 +70,11 @@ size.addEventListener('change', changeBrushSize);
 function changeBrushColor()
 {
     ctx.strokeStyle = color.value;
+    localStorage.setItem("lastColor", color.value);
 }
 
 function changeBrushSize()
 {
   ctx.lineWidth = size.value;
+  localStorage.setItem("lastSize", size.value);
 }
