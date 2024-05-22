@@ -2,8 +2,7 @@ var color = document.getElementById("colorPicker");
 var size = document.getElementById("brushSize");
 var toggle = document.getElementById("toggleSwitch");
 
-const minus = document.getElementById("minus");
-const plus = document.getElementById("plus");
+var sizeInput = document.getElementById("brushSizeInput");
 
 var lastColor = localStorage.getItem("lastColor");
 var lastSize = localStorage.getItem("lastSize");
@@ -62,10 +61,11 @@ function draw(e) {
 color.value = lastColor;
 ctx.strokeStyle = lastColor;
 size.value = lastSize;
+sizeInput.value = lastSize;
 ctx.lineWidth = lastSize;
 
 color.addEventListener('change', changeBrushColor);
-size.addEventListener('change', changeBrushSize);
+size.addEventListener('input', changeBrushSize);
 
 function changeBrushColor()
 {
@@ -75,6 +75,16 @@ function changeBrushColor()
 
 function changeBrushSize()
 {
+  sizeInput.value = size.value;
   ctx.lineWidth = size.value;
   localStorage.setItem("lastSize", size.value);
+}
+
+sizeInput.addEventListener('input', inputBrushSize);
+
+function inputBrushSize()
+{
+  size.value = sizeInput.value;
+
+  changeBrushSize();
 }

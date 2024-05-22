@@ -1,7 +1,7 @@
 @font-face 
 {
   font-family: OddlyCalmingRegular;
-  src: url(../fonts/OddlyCalmingRegular-7B89V.ttf);
+  src: url(../fonts/Cute\ Dino.ttf);
 }
 
 html 
@@ -67,7 +67,7 @@ html
   cursor: pointer;
 }
 
-#menu span 
+#menu .bar 
 {
   width: 70px;
   color: white;
@@ -242,7 +242,7 @@ input:checked + .slider2:before
 /*
  * Just a quick hamburger
  */
-#menuToggle span
+#menuToggle .bar
 {
   display: block;
   width: 33px;
@@ -262,12 +262,12 @@ input:checked + .slider2:before
               opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
+#menuToggle .bar:first-child
 {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
+#menuToggle .bar:nth-last-child(2)
 {
   transform-origin: 0% 100%;
 }
@@ -276,7 +276,7 @@ input:checked + .slider2:before
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-#menuToggle #toggleSwitch:checked ~ span
+#menuToggle #toggleSwitch:checked ~ .bar
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
@@ -286,7 +286,7 @@ input:checked + .slider2:before
 /*
  * But let's hide the middle one.
  */
-#menuToggle #toggleSwitch:checked ~ span:nth-last-child(3)
+#menuToggle #toggleSwitch:checked ~ .bar:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
@@ -295,7 +295,7 @@ input:checked + .slider2:before
 /*
  * Ohyeah and the last one should go the other direction
  */
-#menuToggle #toggleSwitch:checked ~ span:nth-last-child(2)
+#menuToggle #toggleSwitch:checked ~ .bar:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
 }
@@ -348,4 +348,19 @@ input:checked + .slider2:before
 #menu a:hover
 {
   color:rgb(71, 178, 255);
+}
+
+
+/* End of code from codepen */
+
+#brushSizeInput 
+{
+  width: 50px;
+  height: 30px;
+  vertical-align: middle;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 24px;
+  color:#9dcffb;
 }
