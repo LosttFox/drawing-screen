@@ -1,0 +1,90 @@
+/* Style Menu Items */
+.menuItem
+{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+
+/* Style Brush Size Items */
+.sizeInputs
+{
+    display: flex;
+    align-items: center;
+}
+
+/* Style Slider */
+.slider 
+{
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.5em;
+  width: 15em;
+  border-radius: 8px;  
+  background: #4a4b50;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb 
+{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%; 
+  background: #f273e3;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb 
+{
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background: #f273e3;
+  cursor: pointer;
+}
+
+/* Style Input */
+#brushSizeInput 
+{
+  width: 50px;
+  height: 30px;
+  vertical-align: middle;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 24px;
+  color:#9dcffb;
+}
+
+
+/* Style Colour Picker */
+#colorPicker 
+{
+  border-radius: 15px;
+  height: 2.5em;
+  width: 17.5em;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0px 1em;
+}
+
+#colorPicker::-webkit-color-swatch-wrapper 
+{
+    padding: 0; 
+}
+#colorPicker::-webkit-color-swatch 
+{
+    border: none;
+    border-radius: 15px;
+}
+
