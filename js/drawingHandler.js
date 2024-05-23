@@ -1,5 +1,5 @@
 var color = document.getElementById("colorPicker");
-var size = document.getElementById("brushSize");
+var size = document.getElementById("brushSizeSlider");
 var toggle = document.getElementById("toggleSwitch");
 
 var sizeInput = document.getElementById("brushSizeInput");
