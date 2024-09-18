@@ -88,3 +88,10 @@ function inputBrushSize()
 
   changeBrushSize();
 }
+
+
+
+
+document.addEventListener('pointermove', draw);
+document.addEventListener('pointerdown', setPosition);
+document.addEventListener('pointerenter', setPosition);
