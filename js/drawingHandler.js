@@ -88,3 +88,15 @@ function inputBrushSize()
 
   changeBrushSize();
 }
+
+document.addEventListener('pointermove', function(event) {
+  console.log(`Pointer move, Input device type: ${event.pointerType}`);
+});
+
+document.addEventListener('pointerdown', function(event) {
+  console.log(`Pointer down, Input device type: ${event.pointerType}`);
+});
+
+document.addEventListener('pointerup', function(event) {
+  console.log(`Pointer up, Input device type: ${event.pointerType}`);
+});
