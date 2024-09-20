@@ -30,18 +30,21 @@ document.addEventListener('mousedown', setPosition);
 document.addEventListener('mouseenter', setPosition);
 
 // new position from mouse event
-function setPosition(e) {
+function setPosition(e)
+{
   pos.x = e.clientX;
   pos.y = e.clientY;
 }
 
 // resize canvas
-function resize() {
+function resize()
+{
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
 }
 
-function draw(e) {
+function draw(e)
+{
   // mouse left button must be pressed
   if (e.buttons !== 1 || toggle.checked) return;
 
@@ -69,8 +72,8 @@ size.addEventListener('input', changeBrushSize);
 
 function changeBrushColor()
 {
-    ctx.strokeStyle = color.value;
-    localStorage.setItem("lastColor", color.value);
+  ctx.strokeStyle = color.value;
+  localStorage.setItem("lastColor", color.value);
 }
 
 function changeBrushSize()
@@ -89,14 +92,17 @@ function inputBrushSize()
   changeBrushSize();
 }
 
-document.addEventListener('pointermove', function(event) {
+document.addEventListener('pointermove', function (event)
+{
   console.log(`Pointer move, Input device type: ${event.pointerType}`);
 });
 
-document.addEventListener('pointerdown', function(event) {
+document.addEventListener('pointerdown', function (event)
+{
   console.log(`Pointer down, Input device type: ${event.pointerType}`);
 });
 
-document.addEventListener('pointerup', function(event) {
+document.addEventListener('pointerup', function (event)
+{
   console.log(`Pointer up, Input device type: ${event.pointerType}`);
 });
