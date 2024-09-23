@@ -7,8 +7,6 @@ var sizeInput = document.getElementById("brushSizeInput");
 var lastColor = localStorage.getItem("lastColor");
 var lastSize = localStorage.getItem("lastSize");
 
-// Code below is from https://stackoverflow.com/a/30684711
-
 // create canvas element and append it to document body
 var canvas = document.createElement('canvas');
 document.getElementById("screen").appendChild(canvas);
@@ -25,15 +23,27 @@ resize();
 var pos = { x: 0, y: 0 };
 
 window.addEventListener('resize', resize);
+
+// Mouse events
 document.addEventListener('mousemove', draw);
 document.addEventListener('mousedown', setPosition);
 document.addEventListener('mouseenter', setPosition);
 
-// new position from mouse event
+// Touch events for mobile
+canvas.addEventListener('touchstart', function (e) {
+  e.preventDefault(); // Prevent scrolling
+  setPosition(e.touches[0]);
+});
+canvas.addEventListener('touchmove', function (e) {
+  e.preventDefault(); // Prevent scrolling
+  draw(e.touches[0]);
+});
+
+// new position from mouse or touch event
 function setPosition(e)
 {
-  pos.x = e.clientX;
-  pos.y = e.clientY;
+  pos.x = e.clientX || e.pageX;
+  pos.y = e.clientY || e.pageY;
 }
 
 // resize canvas
@@ -45,11 +55,9 @@ function resize()
 
 function draw(e)
 {
-  // mouse left button must be pressed
-  if (e.buttons !== 1 || toggle.checked) return;
+  if ((e.buttons !== 1 && e.pointerType !== 'touch') || toggle.checked) return;
 
   ctx.beginPath(); // begin
-
   ctx.lineCap = 'round';
 
   ctx.moveTo(pos.x, pos.y); // from
@@ -58,7 +66,6 @@ function draw(e)
 
   ctx.stroke(); // draw it!
 }
-
 
 // My code
 color.value = lastColor;
@@ -88,10 +95,10 @@ sizeInput.addEventListener('input', inputBrushSize);
 function inputBrushSize()
 {
   size.value = sizeInput.value;
-
   changeBrushSize();
 }
 
+// Pointer event logging for both mouse and touch
 document.addEventListener('pointermove', function (event)
 {
   console.log(`Pointer move, Input device type: ${event.pointerType}`);
