@@ -15,7 +15,7 @@ document.body.style.margin = 0;
 canvas.style.position = 'fixed';
 
 // get canvas 2D context and set him correct size
-var ctx = canvas.getContext('2d');
+var context = canvas.getContext('2d');
 resize();
 
 // last known position
@@ -48,44 +48,44 @@ function setPosition(e)
 // resize canvas
 function resize()
 {
-  ctx.canvas.width = window.innerWidth;
-  ctx.canvas.height = window.innerHeight;
+  context.canvas.width = window.innerWidth;
+  context.canvas.height = window.innerHeight;
 }
 
-function draw(e)
+function draw(event)
 {
-  if ((e.buttons !== 1 && e.pointerType !== 'touch') || toggle.checked) return;
+  if ((event.buttons !== 1 && event.pointerType !== 'touch') || toggle.checked) return;
 
-  ctx.beginPath(); // begin
-  ctx.lineCap = 'round';
+  context.beginPath(); // begin
+  context.lineCap = 'round';
 
-  ctx.moveTo(pos.x, pos.y); // from
-  setPosition(e);
-  ctx.lineTo(pos.x, pos.y); // to
+  context.moveTo(pos.x, pos.y); // from
+  setPosition(event);
+  context.lineTo(pos.x, pos.y); // to
 
-  ctx.stroke(); // draw it!
+  context.stroke(); // draw it!
 }
 
 // My code
 color.value = lastColor;
-ctx.strokeStyle = lastColor;
+context.strokeStyle = lastColor;
 size.value = lastSize;
 sizeInput.value = lastSize;
-ctx.lineWidth = lastSize;
+context.lineWidth = lastSize;
 
 color.addEventListener('change', changeBrushColor);
 size.addEventListener('input', changeBrushSize);
 
 function changeBrushColor()
 {
-  ctx.strokeStyle = color.value;
+  context.strokeStyle = color.value;
   localStorage.setItem("lastColor", color.value);
 }
 
 function changeBrushSize()
 {
   sizeInput.value = size.value;
-  ctx.lineWidth = size.value;
+  context.lineWidth = size.value;
   localStorage.setItem("lastSize", size.value);
 }
 
@@ -118,15 +118,9 @@ document.ontouchmove = function (e) { e.preventDefault(); };
 
 var canvastop = canvas.offsetTop;
 
-var context = canvas.getContext("2d");
 
 var lastx;
 var lasty;
-
-context.strokeStyle = "#000000";
-context.lineCap = 'round';
-context.lineJoin = 'round';
-context.lineWidth = 5;
 
 function clear()
 {
